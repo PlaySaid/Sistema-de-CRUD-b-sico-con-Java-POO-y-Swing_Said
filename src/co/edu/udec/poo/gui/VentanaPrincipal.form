@@ -13,11 +13,20 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menuGeneral">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/menu.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Menu"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
           </Properties>
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="subMenuEscuela">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/escuela.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Escuela"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -28,6 +37,9 @@
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/a&#xf1;adir.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="A&#xf1;adir..."/>
                   </Properties>
@@ -40,6 +52,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/consultar.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Consultar..."/>
                   </Properties>
                   <Events>
@@ -51,6 +66,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/actualizar.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Actualizar..."/>
                   </Properties>
                   <Events>
@@ -61,6 +79,9 @@
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/eliminar.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar..."/>
                   </Properties>
@@ -75,6 +96,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/lista.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Ver lista..."/>
                   </Properties>
                 </MenuItem>
@@ -82,62 +106,80 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="subMenuAlumno">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/estudiante.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Alumno"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemA&#xf1;adir1">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemA&#xf1;adir3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/a&#xf1;adir.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="A&#xf1;adir..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemA&#xf1;adir1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemA&#xf1;adir3ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemConsultar1">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemConsultar3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/consultar.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Consultar..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemConsultar1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemConsultar3ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemActualizar1">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemActualizar3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/actualizar.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Actualizar..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemActualizar1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemActualizar3ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemEliminar1">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemEliminar3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/eliminar.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemEliminar1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemEliminar3ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separador1">
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separador3">
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemVerLista1">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemVerLista3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/lista.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ver lista..."/>
                   </Properties>
@@ -146,62 +188,80 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="subMenuMateria">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/libro.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Materia"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemA&#xf1;adir2">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemA&#xf1;adir4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/a&#xf1;adir.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="A&#xf1;adir..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemA&#xf1;adir2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemA&#xf1;adir4ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemConsultar2">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemConsultar4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/consultar.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Consultar..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemConsultar2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemConsultar4ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemActualizar2">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemActualizar4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/actualizar.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Actualizar..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemActualizar2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemActualizar4ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemEliminar2">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemEliminar4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/eliminar.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar..."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemEliminar2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuItemEliminar4ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separador2">
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separador4">
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemVerLista2">
+                <MenuItem class="javax.swing.JMenuItem" name="subMenuItemVerLista4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/lista.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ver lista..."/>
                   </Properties>
@@ -212,13 +272,22 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuAyuda">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/ayuda.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemAcercaDe">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/co/edu/udec/poo/gui/iconos/acerca de.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Acerca de..."/>
               </Properties>
@@ -257,7 +326,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="470" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="461" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

@@ -36,19 +36,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Separador = new javax.swing.JPopupMenu.Separator();
         subMenuItemVerLista = new javax.swing.JMenuItem();
         subMenuAlumno = new javax.swing.JMenu();
-        subMenuItemAñadir1 = new javax.swing.JMenuItem();
-        subMenuItemConsultar1 = new javax.swing.JMenuItem();
-        subMenuItemActualizar1 = new javax.swing.JMenuItem();
-        subMenuItemEliminar1 = new javax.swing.JMenuItem();
-        Separador1 = new javax.swing.JPopupMenu.Separator();
-        subMenuItemVerLista1 = new javax.swing.JMenuItem();
+        subMenuItemAñadir3 = new javax.swing.JMenuItem();
+        subMenuItemConsultar3 = new javax.swing.JMenuItem();
+        subMenuItemActualizar3 = new javax.swing.JMenuItem();
+        subMenuItemEliminar3 = new javax.swing.JMenuItem();
+        Separador3 = new javax.swing.JPopupMenu.Separator();
+        subMenuItemVerLista3 = new javax.swing.JMenuItem();
         subMenuMateria = new javax.swing.JMenu();
-        subMenuItemAñadir2 = new javax.swing.JMenuItem();
-        subMenuItemConsultar2 = new javax.swing.JMenuItem();
-        subMenuItemActualizar2 = new javax.swing.JMenuItem();
-        subMenuItemEliminar2 = new javax.swing.JMenuItem();
-        Separador2 = new javax.swing.JPopupMenu.Separator();
-        subMenuItemVerLista2 = new javax.swing.JMenuItem();
+        subMenuItemAñadir4 = new javax.swing.JMenuItem();
+        subMenuItemConsultar4 = new javax.swing.JMenuItem();
+        subMenuItemActualizar4 = new javax.swing.JMenuItem();
+        subMenuItemEliminar4 = new javax.swing.JMenuItem();
+        Separador4 = new javax.swing.JPopupMenu.Separator();
+        subMenuItemVerLista4 = new javax.swing.JMenuItem();
         menuAyuda = new javax.swing.JMenu();
         menuItemAcercaDe = new javax.swing.JMenuItem();
 
@@ -57,12 +57,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         barraMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        menuGeneral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/menu.png"))); // NOI18N
         menuGeneral.setText("Menu");
+        menuGeneral.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        subMenuEscuela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/escuela.png"))); // NOI18N
         subMenuEscuela.setText("Escuela");
         subMenuEscuela.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         subMenuItemAñadir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/añadir.png"))); // NOI18N
         subMenuItemAñadir.setText("Añadir...");
         subMenuItemAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +76,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuEscuela.add(subMenuItemAñadir);
 
         subMenuItemConsultar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/consultar.png"))); // NOI18N
         subMenuItemConsultar.setText("Consultar...");
         subMenuItemConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +86,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuEscuela.add(subMenuItemConsultar);
 
         subMenuItemActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/actualizar.png"))); // NOI18N
         subMenuItemActualizar.setText("Actualizar...");
         subMenuItemActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +96,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuEscuela.add(subMenuItemActualizar);
 
         subMenuItemEliminar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/eliminar.png"))); // NOI18N
         subMenuItemEliminar.setText("Eliminar...");
         subMenuItemEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,108 +107,124 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuEscuela.add(Separador);
 
         subMenuItemVerLista.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemVerLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/lista.png"))); // NOI18N
         subMenuItemVerLista.setText("Ver lista...");
         subMenuEscuela.add(subMenuItemVerLista);
 
         menuGeneral.add(subMenuEscuela);
 
+        subMenuAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/estudiante.png"))); // NOI18N
         subMenuAlumno.setText("Alumno");
         subMenuAlumno.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        subMenuItemAñadir1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemAñadir1.setText("Añadir...");
-        subMenuItemAñadir1.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemAñadir3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemAñadir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/añadir.png"))); // NOI18N
+        subMenuItemAñadir3.setText("Añadir...");
+        subMenuItemAñadir3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemAñadir1ActionPerformed(evt);
+                subMenuItemAñadir3ActionPerformed(evt);
             }
         });
-        subMenuAlumno.add(subMenuItemAñadir1);
+        subMenuAlumno.add(subMenuItemAñadir3);
 
-        subMenuItemConsultar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemConsultar1.setText("Consultar...");
-        subMenuItemConsultar1.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemConsultar3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemConsultar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/consultar.png"))); // NOI18N
+        subMenuItemConsultar3.setText("Consultar...");
+        subMenuItemConsultar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemConsultar1ActionPerformed(evt);
+                subMenuItemConsultar3ActionPerformed(evt);
             }
         });
-        subMenuAlumno.add(subMenuItemConsultar1);
+        subMenuAlumno.add(subMenuItemConsultar3);
 
-        subMenuItemActualizar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemActualizar1.setText("Actualizar...");
-        subMenuItemActualizar1.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemActualizar3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemActualizar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/actualizar.png"))); // NOI18N
+        subMenuItemActualizar3.setText("Actualizar...");
+        subMenuItemActualizar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemActualizar1ActionPerformed(evt);
+                subMenuItemActualizar3ActionPerformed(evt);
             }
         });
-        subMenuAlumno.add(subMenuItemActualizar1);
+        subMenuAlumno.add(subMenuItemActualizar3);
 
-        subMenuItemEliminar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemEliminar1.setText("Eliminar...");
-        subMenuItemEliminar1.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemEliminar3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemEliminar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/eliminar.png"))); // NOI18N
+        subMenuItemEliminar3.setText("Eliminar...");
+        subMenuItemEliminar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemEliminar1ActionPerformed(evt);
+                subMenuItemEliminar3ActionPerformed(evt);
             }
         });
-        subMenuAlumno.add(subMenuItemEliminar1);
-        subMenuAlumno.add(Separador1);
+        subMenuAlumno.add(subMenuItemEliminar3);
+        subMenuAlumno.add(Separador3);
 
-        subMenuItemVerLista1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemVerLista1.setText("Ver lista...");
-        subMenuAlumno.add(subMenuItemVerLista1);
+        subMenuItemVerLista3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemVerLista3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/lista.png"))); // NOI18N
+        subMenuItemVerLista3.setText("Ver lista...");
+        subMenuAlumno.add(subMenuItemVerLista3);
 
         menuGeneral.add(subMenuAlumno);
 
+        subMenuMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/libro.png"))); // NOI18N
         subMenuMateria.setText("Materia");
         subMenuMateria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        subMenuItemAñadir2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemAñadir2.setText("Añadir...");
-        subMenuItemAñadir2.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemAñadir4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemAñadir4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/añadir.png"))); // NOI18N
+        subMenuItemAñadir4.setText("Añadir...");
+        subMenuItemAñadir4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemAñadir2ActionPerformed(evt);
+                subMenuItemAñadir4ActionPerformed(evt);
             }
         });
-        subMenuMateria.add(subMenuItemAñadir2);
+        subMenuMateria.add(subMenuItemAñadir4);
 
-        subMenuItemConsultar2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemConsultar2.setText("Consultar...");
-        subMenuItemConsultar2.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemConsultar4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemConsultar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/consultar.png"))); // NOI18N
+        subMenuItemConsultar4.setText("Consultar...");
+        subMenuItemConsultar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemConsultar2ActionPerformed(evt);
+                subMenuItemConsultar4ActionPerformed(evt);
             }
         });
-        subMenuMateria.add(subMenuItemConsultar2);
+        subMenuMateria.add(subMenuItemConsultar4);
 
-        subMenuItemActualizar2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemActualizar2.setText("Actualizar...");
-        subMenuItemActualizar2.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemActualizar4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemActualizar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/actualizar.png"))); // NOI18N
+        subMenuItemActualizar4.setText("Actualizar...");
+        subMenuItemActualizar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemActualizar2ActionPerformed(evt);
+                subMenuItemActualizar4ActionPerformed(evt);
             }
         });
-        subMenuMateria.add(subMenuItemActualizar2);
+        subMenuMateria.add(subMenuItemActualizar4);
 
-        subMenuItemEliminar2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemEliminar2.setText("Eliminar...");
-        subMenuItemEliminar2.addActionListener(new java.awt.event.ActionListener() {
+        subMenuItemEliminar4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemEliminar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/eliminar.png"))); // NOI18N
+        subMenuItemEliminar4.setText("Eliminar...");
+        subMenuItemEliminar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subMenuItemEliminar2ActionPerformed(evt);
+                subMenuItemEliminar4ActionPerformed(evt);
             }
         });
-        subMenuMateria.add(subMenuItemEliminar2);
-        subMenuMateria.add(Separador2);
+        subMenuMateria.add(subMenuItemEliminar4);
+        subMenuMateria.add(Separador4);
 
-        subMenuItemVerLista2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        subMenuItemVerLista2.setText("Ver lista...");
-        subMenuMateria.add(subMenuItemVerLista2);
+        subMenuItemVerLista4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subMenuItemVerLista4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/lista.png"))); // NOI18N
+        subMenuItemVerLista4.setText("Ver lista...");
+        subMenuMateria.add(subMenuItemVerLista4);
 
         menuGeneral.add(subMenuMateria);
 
         barraMenu.add(menuGeneral);
 
+        menuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/ayuda.png"))); // NOI18N
         menuAyuda.setText("Ayuda");
+        menuAyuda.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         menuItemAcercaDe.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menuItemAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/acerca de.png"))); // NOI18N
         menuItemAcercaDe.setText("Acerca de...");
         menuAyuda.add(menuItemAcercaDe);
 
@@ -217,14 +240,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGap(0, 461, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void subMenuItemAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadirActionPerformed
-        // TODO add your handling code here:
+        VentanaAñadirEscuela ventanaAñadirEscuela = new VentanaAñadirEscuela(this, true);
+        ventanaAñadirEscuela.setLocationRelativeTo(this);
+        ventanaAñadirEscuela.setVisible(true);
     }//GEN-LAST:event_subMenuItemAñadirActionPerformed
 
     private void subMenuItemConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemConsultarActionPerformed
@@ -239,37 +264,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_subMenuItemEliminarActionPerformed
 
-    private void subMenuItemAñadir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir1ActionPerformed
+    private void subMenuItemAñadir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemAñadir1ActionPerformed
+    }//GEN-LAST:event_subMenuItemAñadir3ActionPerformed
 
-    private void subMenuItemConsultar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemConsultar1ActionPerformed
+    private void subMenuItemConsultar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemConsultar3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemConsultar1ActionPerformed
+    }//GEN-LAST:event_subMenuItemConsultar3ActionPerformed
 
-    private void subMenuItemActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemActualizar1ActionPerformed
+    private void subMenuItemActualizar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemActualizar3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemActualizar1ActionPerformed
+    }//GEN-LAST:event_subMenuItemActualizar3ActionPerformed
 
-    private void subMenuItemEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemEliminar1ActionPerformed
+    private void subMenuItemEliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemEliminar3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemEliminar1ActionPerformed
+    }//GEN-LAST:event_subMenuItemEliminar3ActionPerformed
 
-    private void subMenuItemAñadir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir2ActionPerformed
+    private void subMenuItemAñadir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemAñadir2ActionPerformed
+    }//GEN-LAST:event_subMenuItemAñadir4ActionPerformed
 
-    private void subMenuItemConsultar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemConsultar2ActionPerformed
+    private void subMenuItemConsultar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemConsultar4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemConsultar2ActionPerformed
+    }//GEN-LAST:event_subMenuItemConsultar4ActionPerformed
 
-    private void subMenuItemActualizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemActualizar2ActionPerformed
+    private void subMenuItemActualizar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemActualizar4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemActualizar2ActionPerformed
+    }//GEN-LAST:event_subMenuItemActualizar4ActionPerformed
 
-    private void subMenuItemEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemEliminar2ActionPerformed
+    private void subMenuItemEliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemEliminar4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subMenuItemEliminar2ActionPerformed
+    }//GEN-LAST:event_subMenuItemEliminar4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,8 +333,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPopupMenu.Separator Separador;
-    private javax.swing.JPopupMenu.Separator Separador1;
-    private javax.swing.JPopupMenu.Separator Separador2;
+    private javax.swing.JPopupMenu.Separator Separador3;
+    private javax.swing.JPopupMenu.Separator Separador4;
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuGeneral;
@@ -317,20 +342,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu subMenuAlumno;
     private javax.swing.JMenu subMenuEscuela;
     private javax.swing.JMenuItem subMenuItemActualizar;
-    private javax.swing.JMenuItem subMenuItemActualizar1;
-    private javax.swing.JMenuItem subMenuItemActualizar2;
+    private javax.swing.JMenuItem subMenuItemActualizar3;
+    private javax.swing.JMenuItem subMenuItemActualizar4;
     private javax.swing.JMenuItem subMenuItemAñadir;
-    private javax.swing.JMenuItem subMenuItemAñadir1;
-    private javax.swing.JMenuItem subMenuItemAñadir2;
+    private javax.swing.JMenuItem subMenuItemAñadir3;
+    private javax.swing.JMenuItem subMenuItemAñadir4;
     private javax.swing.JMenuItem subMenuItemConsultar;
-    private javax.swing.JMenuItem subMenuItemConsultar1;
-    private javax.swing.JMenuItem subMenuItemConsultar2;
+    private javax.swing.JMenuItem subMenuItemConsultar3;
+    private javax.swing.JMenuItem subMenuItemConsultar4;
     private javax.swing.JMenuItem subMenuItemEliminar;
-    private javax.swing.JMenuItem subMenuItemEliminar1;
-    private javax.swing.JMenuItem subMenuItemEliminar2;
+    private javax.swing.JMenuItem subMenuItemEliminar3;
+    private javax.swing.JMenuItem subMenuItemEliminar4;
     private javax.swing.JMenuItem subMenuItemVerLista;
-    private javax.swing.JMenuItem subMenuItemVerLista1;
-    private javax.swing.JMenuItem subMenuItemVerLista2;
+    private javax.swing.JMenuItem subMenuItemVerLista3;
+    private javax.swing.JMenuItem subMenuItemVerLista4;
     private javax.swing.JMenu subMenuMateria;
     // End of variables declaration//GEN-END:variables
 }
