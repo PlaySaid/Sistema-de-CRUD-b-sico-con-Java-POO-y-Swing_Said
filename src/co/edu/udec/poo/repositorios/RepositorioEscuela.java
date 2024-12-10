@@ -1,6 +1,6 @@
 package co.edu.udec.poo.repositorios;
 
-import co.edu.udec.poo.gui.VentanaAñadirEscuela;
+import co.edu.udec.poo.gui.VentanaPrincipalEscuela;
 import co.edu.udec.poo.datos.Escuela;
 import java.util.HashMap;
 

@@ -6,12 +6,12 @@ import co.edu.udec.poo.datos.Escuela;
 import co.edu.udec.poo.datos.EscuelaControlador;
 import co.edu.udec.poo.repositorios.RepositorioEscuela;
 
-public class VentanaAñadirEscuela extends javax.swing.JDialog {
+public class VentanaPrincipalEscuela extends javax.swing.JDialog {
 
     /**
      * Creates new form VentanaAñadirAlumno
      */
-    public VentanaAñadirEscuela(java.awt.Frame parent, boolean modal) {
+    public VentanaPrincipalEscuela(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -31,6 +31,8 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
         botonGuardar = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
         botonBuscar = new javax.swing.JButton();
+        botonEliminar = new javax.swing.JButton();
+        botonActualizar = new javax.swing.JButton();
         label_imagenEscuela = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -40,7 +42,7 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
 
         label_titulo.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText("FORMULARIO PARA AGREGAR ESCUELA");
+        label_titulo.setText("FORMULARIO DE ESCUELA");
         label_titulo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         panelDatosEscuela.setBackground(new java.awt.Color(244, 244, 244));
@@ -100,11 +102,31 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
         });
 
         botonBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/consultar.png"))); // NOI18N
+        botonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/Buscar.png"))); // NOI18N
         botonBuscar.setText("Buscar");
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBuscarActionPerformed(evt);
+            }
+        });
+
+        botonEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/Eliminar.png"))); // NOI18N
+        botonEliminar.setText("Eliminar");
+        botonEliminar.setEnabled(false);
+        botonEliminar.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                botonEliminarStateChanged(evt);
+            }
+        });
+
+        botonActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/Actualizar.png"))); // NOI18N
+        botonActualizar.setText("Actualizar");
+        botonActualizar.setEnabled(false);
+        botonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarActionPerformed(evt);
             }
         });
 
@@ -122,12 +144,16 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
                             .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(91, 91, 91)
                         .addGroup(panelDatosEscuelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(campoDeTextoNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                            .addComponent(campoDeTextoNombre, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campoDeTextoDireccion, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campoDeTextoNumEstudiantes, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(panelDatosEscuelaLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                         .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonEliminar)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonActualizar)
                         .addGap(18, 18, 18)
                         .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -156,9 +182,11 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatosEscuelaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelDatosEscuelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(botonBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                            .addComponent(botonCancelar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(panelDatosEscuelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
 
@@ -175,9 +203,9 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(label_imagenEscuela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelDatosEscuela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(label_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelDatosEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -213,17 +241,25 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
                 String msj = "Este usuario no existe.\n"
                         + "Para agregar un nuevo usuario ingrese los datos y haga clic en guardar.";
                 JOptionPane.showMessageDialog(this, msj);
+                
+                limpiarCampos();
             }
             else {
                 campoDeTextoNombre.setText(escuela.getNombre());
                 campoDeTextoDireccion.setText(escuela.getDireccion());
                 campoDeTextoNumEstudiantes.setText(escuela.getNumEstudiantes());
+                botonActualizar.setEnabled(true);
+                botonEliminar.setEnabled(true);
             }
         }
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
-        // TODO add your handling code here:
+        int opcion = JOptionPane.showConfirmDialog(this, "¿Desea cerrar esta ventana?"
+                , "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(opcion == JOptionPane.YES_OPTION){
+            this.dispose();
+        }
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
@@ -239,8 +275,16 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
 
         JOptionPane.showMessageDialog(this, msj);
         
+        limpiarCampos();
     }//GEN-LAST:event_botonGuardarActionPerformed
 
+    public void limpiarCampos(){
+        campoDeTextoNombre.setText("");
+        campoDeTextoDireccion.setText("");
+        campoDeTextoNumEstudiantes.setText("");
+        botonActualizar.setEnabled(false);
+        botonEliminar.setEnabled(false);
+    }
     private void campoDeTextoNumEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDeTextoNumEstudiantesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoDeTextoNumEstudiantesActionPerformed
@@ -253,10 +297,20 @@ public class VentanaAñadirEscuela extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoDeTextoNombreActionPerformed
 
+    private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
+        
+    }//GEN-LAST:event_botonActualizarActionPerformed
+
+    private void botonEliminarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_botonEliminarStateChanged
+        
+    }//GEN-LAST:event_botonEliminarStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonActualizar;
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonCancelar;
+    private javax.swing.JButton botonEliminar;
     private javax.swing.JButton botonGuardar;
     private javax.swing.JTextField campoDeTextoDireccion;
     private javax.swing.JTextField campoDeTextoNombre;
