@@ -6,11 +6,11 @@ import co.edu.udec.poo.datos.Escuela;
 import co.edu.udec.poo.datos.EscuelaControlador;
 import co.edu.udec.poo.repositorios.RepositorioEscuela;
 
-public class VentanaPrincipalEscuela extends javax.swing.JDialog {
 
-    /**
-     * Creates new form VentanaAñadirAlumno
-     */
+public class VentanaPrincipalEscuela extends javax.swing.JDialog {
+    
+    EscuelaControlador controlador = new EscuelaControlador();
+
     public VentanaPrincipalEscuela(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -64,6 +64,7 @@ public class VentanaPrincipalEscuela extends javax.swing.JDialog {
         labelDireccion.setFont(new java.awt.Font("Segoe UI Semilight", 1, 22)); // NOI18N
         labelDireccion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelDireccion.setText("DIRECCION:");
+        labelDireccion.setToolTipText("");
 
         campoDeTextoDireccion.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         campoDeTextoDireccion.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +120,11 @@ public class VentanaPrincipalEscuela extends javax.swing.JDialog {
                 botonEliminarStateChanged(evt);
             }
         });
+        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarActionPerformed(evt);
+            }
+        });
 
         botonActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         botonActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/Actualizar.png"))); // NOI18N
@@ -148,9 +154,8 @@ public class VentanaPrincipalEscuela extends javax.swing.JDialog {
                             .addComponent(campoDeTextoDireccion, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campoDeTextoNumEstudiantes, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(panelDatosEscuelaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                         .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                         .addComponent(botonEliminar)
                         .addGap(18, 18, 18)
                         .addComponent(botonActualizar)
@@ -204,8 +209,10 @@ public class VentanaPrincipalEscuela extends javax.swing.JDialog {
                 .addComponent(label_imagenEscuela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelDatosEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelDatosEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -227,19 +234,18 @@ public class VentanaPrincipalEscuela extends javax.swing.JDialog {
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         
-        EscuelaControlador controlador = new EscuelaControlador();
         String nombre = campoDeTextoNombre.getText();
         Escuela escuela = controlador.buscarEscuela(nombre);
         
         
-        if (RepositorioEscuela.escuelaBD.isEmpty()){
+        if (controlador.baseDeDatosVacia()){
             String msj = "No existen escuelas en la base de datos.";
             JOptionPane.showMessageDialog(this, msj);
         }
         else{
-            if(controlador.buscarEscuela(nombre) == null){
-                String msj = "Este usuario no existe.\n"
-                        + "Para agregar un nuevo usuario ingrese los datos y haga clic en guardar.";
+            if(escuela == null){
+                String msj = "Esta escuela no existe.\n"
+                        + "Para agregar una nueva ingrese los datos y haga clic en guardar.";
                 JOptionPane.showMessageDialog(this, msj);
                 
                 limpiarCampos();
@@ -263,15 +269,13 @@ public class VentanaPrincipalEscuela extends javax.swing.JDialog {
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
-        // guarda los datos ingresados //
 
         String nombreEscuela = campoDeTextoNombre.getText();
         String direccion = campoDeTextoDireccion.getText();
         String numEstudiantes = campoDeTextoNumEstudiantes.getText();
 
-        EscuelaControlador escu = new EscuelaControlador();
 
-        String msj = escu.guardarEscuela(nombreEscuela, direccion, numEstudiantes);
+        String msj = controlador.guardarEscuela(nombreEscuela, direccion, numEstudiantes);
 
         JOptionPane.showMessageDialog(this, msj);
         
@@ -298,12 +302,37 @@ public class VentanaPrincipalEscuela extends javax.swing.JDialog {
     }//GEN-LAST:event_campoDeTextoNombreActionPerformed
 
     private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
+
+        String nombreEscuela = campoDeTextoNombre.getText();
+        String direccion = campoDeTextoDireccion.getText();
+        String numEstudiantes = campoDeTextoNumEstudiantes.getText();
+
+        String msj = controlador.actualizarEscuela(nombreEscuela, direccion, numEstudiantes);
+
+        JOptionPane.showMessageDialog(this, msj);
         
+        limpiarCampos();
     }//GEN-LAST:event_botonActualizarActionPerformed
 
     private void botonEliminarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_botonEliminarStateChanged
         
     }//GEN-LAST:event_botonEliminarStateChanged
+
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+        String nombreEscuela = campoDeTextoNombre.getText();
+        String direccion = campoDeTextoDireccion.getText();
+        String numEstudiantes = campoDeTextoNumEstudiantes.getText();
+        
+        String confirmacion = "¿Esta seguro?";
+        int respuesta = JOptionPane.showConfirmDialog(this, confirmacion, 
+                "¿ELIMINAR?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(respuesta == JOptionPane.YES_OPTION){
+            String msj = controlador.eliminarEscuela(nombreEscuela, direccion, numEstudiantes);
+            
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
+        }   
+    }//GEN-LAST:event_botonEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

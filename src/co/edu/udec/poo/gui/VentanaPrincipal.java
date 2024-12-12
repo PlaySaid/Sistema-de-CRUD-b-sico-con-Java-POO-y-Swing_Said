@@ -62,6 +62,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuItemVerLista.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         subMenuItemVerLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/lista.png"))); // NOI18N
         subMenuItemVerLista.setText("Ver lista...");
+        subMenuItemVerLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMenuItemVerListaActionPerformed(evt);
+            }
+        });
         subMenuEscuela.add(subMenuItemVerLista);
 
         menuGeneral.add(subMenuEscuela);
@@ -152,6 +157,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void subMenuItemAñadir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subMenuItemAñadir4ActionPerformed
+
+    private void subMenuItemVerListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemVerListaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subMenuItemVerListaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPopupMenu.Separator Separador;
