@@ -1,8 +1,10 @@
 package co.edu.udec.poo.datos;
 
 import co.edu.udec.poo.repositorios.RepositorioEscuela;
-import co.edu.udec.poo.datos.Escuela;
-import javax.swing.JOptionPane;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 public class EscuelaControlador {
     private RepositorioEscuela repositorio;
@@ -78,4 +80,26 @@ public class EscuelaControlador {
             return "No se pudo eliminar, los datos no coinciden.";
         }
     }
+        public List<Escuela> listarEscuelas() {
+        if(repositorio.escuelaBD == null || repositorio.escuelaBD.isEmpty()){
+            return null;
+        }
+        return new ArrayList<>(repositorio.escuelaBD.values());
+    }
+        public DefaultTableModel crearListaEscuelas(){
+            List<Escuela> listaDeEscuelas = listarEscuelas();
+        
+            int totalEscuelas = listaDeEscuelas.size();
+            String columnas[] = {"Nombre", "Dirección", "Num. de estudiantes"};
+            String filas[][] = new String[totalEscuelas][columnas.length];
+                
+            for (int i = 0; i < totalEscuelas; i++) {
+            
+                Escuela esc = listaDeEscuelas.get(i);
+                filas[i][0] = esc.getNombre();
+                filas[i][1] = esc.getDireccion();
+                filas[i][2] = String.valueOf(esc.getNumEstudiantes());
+            }
+            return new DefaultTableModel(filas, columnas);
+        }
 }

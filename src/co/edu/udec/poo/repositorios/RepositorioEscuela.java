@@ -1,7 +1,9 @@
 package co.edu.udec.poo.repositorios;
 
 import co.edu.udec.poo.datos.Escuela;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class RepositorioEscuela {
     
@@ -35,5 +37,8 @@ public class RepositorioEscuela {
     }
     public void eliminarEscuela(String nombreEscuela) {
         escuelaBD.remove(nombreEscuela);
+    }
+    public List<Escuela> listarEscuelas() {
+        return new ArrayList<>(escuelaBD.values());
     }
 }
