@@ -16,10 +16,12 @@ public class MateriaControlador {
         this.repositorio = new RepositorioMateria();
     }
     
+    // metodo solo para validar si la base de datos esta vacia //
     public boolean baseDeDatosVacia() {
         return repositorio.baseDeDatosVacia();
     }
 
+    // Metodo para guardar alumnos con validaciones y un mensaje final diciendo el total de alumnos //
     public String guardarMateria(String nombreMateria, String horario, String profesor) {
         if (nombreMateria.isBlank() || horario.isBlank() || profesor.isBlank()) {
             return "Por favor ingrese datos válidos.";
@@ -35,19 +37,19 @@ public class MateriaControlador {
         return "Materia guardada exitosamente\n"
                 + "Ahora hay " + repositorio.totalMaterias() + " materias guardadas.";
     }
+    
+    // Metodo para buscar materias, con validaciones que si no hay devuelve null y si hay devuelve el objeto //
     public Materia buscarMateria(String nombre) {
         
         if(!repositorio.existeMateria(nombre)){
             return null;
-            
         }
-        if(RepositorioMateria.materiaBD.containsKey(nombre)){
-            
-        }
+        
         Materia materia = repositorio.buscarMateria(nombre);
         return materia;
     }
     
+    // Metodo para actualizar los datos de una materia existente en la base de datos, con validaciones //
     public String actualizarMateria(String nombreMateria, String horario, String profesor) {
         if (nombreMateria.isBlank() || horario.isBlank() || profesor.isBlank()) {
             return "Llene todos los campos para actualizar.";
@@ -62,6 +64,8 @@ public class MateriaControlador {
 
         return "Materia actualizada exitosamente.";
     }
+    
+    // Metodo para eliminar materias con sus validaciones //
     public String eliminarMateria(String nombreMateria, String horario, String profesor){
         
         Materia existeMateria = repositorio.buscarMateria(nombreMateria);
@@ -83,7 +87,9 @@ public class MateriaControlador {
             return "No se pudo eliminar, los datos no coinciden.";
         }
     }
-        public List<Materia> listarMaterias() {
+        
+    // Metodo con validaciones para listar materias, donde si no hay, devuelve null y si hay, devuelve una lista array con los valores almacenados en la base de datos //
+    public List<Materia> listarMaterias() {
         if(repositorio.materiaBD == null || repositorio.materiaBD.isEmpty()){
             return null;
         }

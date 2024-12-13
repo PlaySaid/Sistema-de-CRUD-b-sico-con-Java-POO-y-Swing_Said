@@ -16,10 +16,13 @@ public class AlumnoControlador {
         this.repositorio = new RepositorioAlumno();
     }
     
+    // metodo solo para validar si la base de datos esta vacia //
     public boolean baseDeDatosVacia() {
         return repositorio.baseDeDatosVacia();
     }
 
+    
+    // Metodo para guardar alumnos con validaciones y un mensaje final diciendo el total de alumnos //
     public String guardarAlumno(String nombreAlumno, String edad, String grado) {
         if (nombreAlumno.isBlank() || edad.isBlank() || grado.isBlank()) {
             return "Por favor ingrese datos válidos.";
@@ -35,19 +38,20 @@ public class AlumnoControlador {
         return "Alumno guardado exitosamente\n"
                 + "Ahora hay " + repositorio.totalAlumnos() + " alumnos guardados.";
     }
+    
+    // Metodo para buscar alumnos, con validaciones que si no hay devuelve null y si hay devuelve el objeto //
     public Alumno buscarAlumno(String nombre) {
         
         if(!repositorio.existeAlumno(nombre)){
             return null;
-            
         }
-        if(RepositorioAlumno.alumnoBD.containsKey(nombre)){
-            
-        }
+        
         Alumno alumno = repositorio.buscarAlumno(nombre);
         return alumno;
     }
     
+    
+    // Metodo para actualizar los datos de un alumno existente en la base de datos, con validaciones //
     public String actualizarAlumno(String nombreAlumno, String edad, String grado) {
         if (nombreAlumno.isBlank() || edad.isBlank() || grado.isBlank()) {
             return "Llene todos los campos para actualizar.";
@@ -62,6 +66,8 @@ public class AlumnoControlador {
 
         return "Alumno actualizado exitosamente.";
     }
+    
+    // Metodo para eliminar alumnos con sus validaciones //
     public String eliminarAlumno(String nombreAlumno, String edad, String grado){
         
         Alumno existeAlumno = repositorio.buscarAlumno(nombreAlumno);
@@ -83,20 +89,24 @@ public class AlumnoControlador {
             return "No se pudo eliminar, los datos no coinciden.";
         }
     }
-        public List<Alumno> listarAlumnos() {
+        
+        // Metodo con validaciones para listar alumnos, donde si no hay, devuelve null y si hay, devuelve una lista array con los valores almacenados en la base de datos //
+    public List<Alumno> listarAlumnos() {
         if(repositorio.alumnoBD == null || repositorio.alumnoBD.isEmpty()){
             return null;
         }
         return new ArrayList<>(repositorio.alumnoBD.values());
     }
-        public DefaultTableModel crearListaAlumnos(){
+        
+        // Metodo para crear la estructura de la lista de alumnos //
+    public DefaultTableModel crearListaAlumnos(){
             List<Alumno> listaDeAlumnos = listarAlumnos();
         
-            int totalAlumnos = listaDeAlumnos.size();
-            String columnas[] = {"Nombre", "Edad", "Grado"};
-            String filas[][] = new String[totalAlumnos][columnas.length];
+        int totalAlumnos = listaDeAlumnos.size();
+        String columnas[] = {"Nombre", "Edad", "Grado"};
+        String filas[][] = new String[totalAlumnos][columnas.length];
                 
-            for (int i = 0; i < totalAlumnos; i++) {
+        for (int i = 0; i < totalAlumnos; i++) {
             
                 Alumno alu = listaDeAlumnos.get(i);
                 filas[i][0] = alu.getNombre();

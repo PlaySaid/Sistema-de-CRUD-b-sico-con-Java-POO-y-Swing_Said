@@ -1,8 +1,5 @@
 package co.edu.udec.poo.gui;
 
-import co.edu.udec.poo.repositorios.RepositorioEscuela;
-import javax.swing.JOptionPane;
-
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     public VentanaPrincipal() {
@@ -13,6 +10,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
         menuGeneral = new javax.swing.JMenu();
         subMenuEscuela = new javax.swing.JMenu();
@@ -27,11 +28,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuItemAñadir4 = new javax.swing.JMenuItem();
         Separador4 = new javax.swing.JPopupMenu.Separator();
         subMenuItemVerLista4 = new javax.swing.JMenuItem();
-        menuAyuda = new javax.swing.JMenu();
-        menuItemAcercaDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(".+* GESTION ESCOLAR *+.");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/unicartagenalogo.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Unispace", 1, 48)); // NOI18N
+        jLabel2.setText("SAID ALEJANDRO MARTELO DIAZ");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/flechita.png"))); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        jLabel4.setText("Haga click aqui para abrir el menú");
 
         barraMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -111,22 +120,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuItemVerLista4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         subMenuItemVerLista4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/lista.png"))); // NOI18N
         subMenuItemVerLista4.setText("Ver lista...");
+        subMenuItemVerLista4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMenuItemVerLista4ActionPerformed(evt);
+            }
+        });
         subMenuMateria.add(subMenuItemVerLista4);
 
         menuGeneral.add(subMenuMateria);
 
         barraMenu.add(menuGeneral);
-
-        menuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/ayuda.png"))); // NOI18N
-        menuAyuda.setText("Ayuda");
-        menuAyuda.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        menuItemAcercaDe.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        menuItemAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/acerca de.png"))); // NOI18N
-        menuItemAcercaDe.setText("Acerca de...");
-        menuAyuda.add(menuItemAcercaDe);
-
-        barraMenu.add(menuAyuda);
 
         setJMenuBar(barraMenu);
 
@@ -134,11 +137,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1527, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(376, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(jLabel1))
+                    .addComponent(jLabel2))
+                .addGap(368, 368, 368))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(jLabel4)))
+                .addGap(146, 146, 146)
+                .addComponent(jLabel1)
+                .addGap(62, 62, 62)
+                .addComponent(jLabel2)
+                .addContainerGap(434, Short.MAX_VALUE))
         );
 
         pack();
@@ -157,7 +185,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_subMenuItemAñadir3ActionPerformed
 
     private void subMenuItemAñadir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir4ActionPerformed
-        // TODO add your handling code here:
+        VentanaPrincipalMateria VentanaPrincipalMateria = new VentanaPrincipalMateria(this, true);
+        VentanaPrincipalMateria.setLocationRelativeTo(this);
+        VentanaPrincipalMateria.setVisible(true);
     }//GEN-LAST:event_subMenuItemAñadir4ActionPerformed
 
     private void subMenuItemVerListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemVerListaActionPerformed
@@ -172,14 +202,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaListaAlumnos.setVisible(true);
     }//GEN-LAST:event_subMenuItemVerLista3ActionPerformed
 
+    private void subMenuItemVerLista4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemVerLista4ActionPerformed
+        VentanaListaMaterias VentanaListaMaterias = new VentanaListaMaterias(this, true);
+        VentanaListaMaterias.setLocationRelativeTo(this);
+        VentanaListaMaterias.setVisible(true);
+    }//GEN-LAST:event_subMenuItemVerLista4ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPopupMenu.Separator Separador;
     private javax.swing.JPopupMenu.Separator Separador3;
     private javax.swing.JPopupMenu.Separator Separador4;
     private javax.swing.JMenuBar barraMenu;
-    private javax.swing.JMenu menuAyuda;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu menuGeneral;
-    private javax.swing.JMenuItem menuItemAcercaDe;
     private javax.swing.JMenu subMenuAlumno;
     private javax.swing.JMenu subMenuEscuela;
     private javax.swing.JMenuItem subMenuItemAñadir;
