@@ -1,7 +1,5 @@
 package co.edu.udec.poo.datos;
 
-import java.util.HashMap;
-
 public class Escuela {
     private String nombre;
     private String direccion;

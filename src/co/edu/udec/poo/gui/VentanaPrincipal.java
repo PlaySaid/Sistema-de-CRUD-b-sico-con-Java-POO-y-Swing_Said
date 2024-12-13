@@ -84,6 +84,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subMenuItemVerLista3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         subMenuItemVerLista3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udec/poo/gui/iconos/lista.png"))); // NOI18N
         subMenuItemVerLista3.setText("Ver lista...");
+        subMenuItemVerLista3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMenuItemVerLista3ActionPerformed(evt);
+            }
+        });
         subMenuAlumno.add(subMenuItemVerLista3);
 
         menuGeneral.add(subMenuAlumno);
@@ -146,7 +151,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_subMenuItemAñadirActionPerformed
 
     private void subMenuItemAñadir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir3ActionPerformed
-        // TODO add your handling code here:
+        VentanaPrincipalAlumno VentanaPrincipalAlumno = new VentanaPrincipalAlumno(this, true);
+        VentanaPrincipalAlumno.setLocationRelativeTo(this);
+        VentanaPrincipalAlumno.setVisible(true);
     }//GEN-LAST:event_subMenuItemAñadir3ActionPerformed
 
     private void subMenuItemAñadir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemAñadir4ActionPerformed
@@ -158,6 +165,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaListaEscuelas.setLocationRelativeTo(this);
         VentanaListaEscuelas.setVisible(true);
     }//GEN-LAST:event_subMenuItemVerListaActionPerformed
+
+    private void subMenuItemVerLista3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuItemVerLista3ActionPerformed
+        VentanaListaAlumnos VentanaListaAlumnos = new VentanaListaAlumnos(this, true);
+        VentanaListaAlumnos.setLocationRelativeTo(this);
+        VentanaListaAlumnos.setVisible(true);
+    }//GEN-LAST:event_subMenuItemVerLista3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPopupMenu.Separator Separador;

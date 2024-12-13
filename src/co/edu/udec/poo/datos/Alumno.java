@@ -2,10 +2,10 @@ package co.edu.udec.poo.datos;
 
 public class Alumno {
     private String nombre;
-    private int edad;
+    private String edad;
     private String grado;
 
-    public Alumno(String nombre, int edad, String grado) {
+    public Alumno(String nombre, String edad, String grado) {
         this.nombre = nombre;
         this.edad = edad;
         this.grado = grado;
@@ -19,11 +19,11 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 

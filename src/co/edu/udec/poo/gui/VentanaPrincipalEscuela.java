@@ -1,10 +1,8 @@
 package co.edu.udec.poo.gui;
 
-import java.util.HashMap;
 import javax.swing.JOptionPane;
 import co.edu.udec.poo.datos.Escuela;
 import co.edu.udec.poo.datos.EscuelaControlador;
-import co.edu.udec.poo.repositorios.RepositorioEscuela;
 
 
 public class VentanaPrincipalEscuela extends javax.swing.JDialog {
